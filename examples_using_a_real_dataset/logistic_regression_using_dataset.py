@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import LabelEncoder
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 
 
@@ -29,10 +29,10 @@ clf = clf.fit(X_train, Y_train)
 
 # Validate the classifier
 accuracy = clf.score(X_test, Y_test)
-print 'Accuracy: ' + str(accuracy)
+print ('Accuracy: ' + str(accuracy))
 
 # Make a confusion matrix
 prediction = clf.predict(X_test)
 
 cm = confusion_matrix(prediction, Y_test)
-print cm
+print (cm)
